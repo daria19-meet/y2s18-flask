@@ -1,1 +1,24 @@
-<!-- Put the HTML template for your page here! -->
+<!doctype>
+<html>
+    <head>
+            <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div class="header">
+            <h1>Dance</h1>
+            <p>Dance is the best because it's fun to exercise with music</p>
+        </div>
+        <div class="sidebar">Sidebar</div>
+        <img src="images.png">
+        <div>
+            {%if likes_same_sport==true%}
+                <h2>My favorite dancers are:</h2>
+                <ul>
+                    {% for dance in dancers %}
+                    <li>{{dance}}</li>
+                    {% endfor %}
+                </ul>
+            {%endif%}
+        </div>
+    </body>
+</html>
